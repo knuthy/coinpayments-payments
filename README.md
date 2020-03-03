@@ -33,8 +33,8 @@ How to initialize the module with the correct data.
 const coinPayments = require('coinpayments-payments');
 
 const payment_settings = {
-	private_key: ""
-	, public_key: ""
+	private_key: "",
+	public_key: ""
 };
 
 const payments = new coinPayments(payment_settings, function(err, result) {
@@ -53,10 +53,10 @@ I suggest doing this by running [Electrum LTC](https://electrum-ltc.org/) with:
 
 ```javascript
 payments.createTransaction({
-	amount: 12 // DEFINED IN CURRENCY_RECEIVE
-	, currency_receive: "USD"
-	, currency_send: "LTCT"
-	, buyer_email: ""
+	amount: 12, // DEFINED IN CURRENCY_RECEIVE
+	currency_receive: "USD",
+	currency_send: "LTCT",
+	buyer_email: ""
 }, function(err, result) {
 	if(err) throw err;
 	console.log(result);
