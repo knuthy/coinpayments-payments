@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to coinpayments-payments 👋</h1>
+<h1 align="center">Coinpayments-payments</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/knuthy/coinpayments-payments#readme" target="_blank">
@@ -15,41 +15,38 @@
   </a>
 </p>
 
-> NPM module for acquiring payments and IPNs from the CoinPayments API without form authentication hassle.
-
-### 🏠 [Homepage](https://github.com/knuthy/coinpayments-payments#readme)
+> NPM module for acquiring payments from the CoinPayments API without form authentication hassle.
 
 ## Install
 
 ```sh
-npm install
+npm install coinpayments-payments
 ```
 
-## Run tests
+## Usage
 
-```sh
-npm run test
+```javascript
+const coinPayments = require('coinpayments-payments');
+
+const payment_settings = {
+	private_key: ""
+	, public_key: ""
+};
+
+const payments = new coinPayments(payment_settings, function(err, result) {
+	if(err) throw err;
+	console.log(result);
+});
 ```
 
 ## Author
 
-👤 **Knuthy**
+**Knuthy**
 
 * Twitter: [@knuthdk](https://twitter.com/knuthdk)
 * Github: [@knuthy](https://github.com/knuthy)
 
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/knuthy/coinpayments-payments/issues). You can also take a look at the [contributing guide](https://github.com/knuthy/coinpayments-payments/blob/master/CONTRIBUTING.md).
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-## 📝 License
+## License
 
 Copyright © 2020 [Knuthy](https://github.com/knuthy).<br />
 This project is [MIT](https://github.com/knuthy/coinpayments-payments/blob/master/LICENSE) licensed.
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
