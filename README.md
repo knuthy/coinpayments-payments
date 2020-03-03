@@ -37,7 +37,7 @@ const payment_settings = {
 	, public_key: ""
 };
 
-const payments = new coinPayments(payment_settings, function(err, result) {
+const payments = new coinPayments(payment_settings, (err, result) => {
 	if(err) throw err;
 	console.log(result); 
 	// Configured successfully
@@ -53,11 +53,11 @@ I suggest doing this by running [Electrum LTC](https://electrum-ltc.org/) with:
 
 ```javascript
 payments.createTransaction({
-	amount: 12 // DEFINED IN CURRENCY_RECEIVE
-	, currency_receive: "USD"
-	, currency_send: "LTCT"
-	, buyer_email: ""
-}, function(err, result) {
+	amount: 12, // DEFINED IN CURRENCY_RECEIVE
+	currency_receive: "USD",
+	currency_send: "LTCT",
+	buyer_email: ""
+}, (err, result) => {
 	if(err) throw err;
 	console.log(result);
 });
@@ -66,7 +66,7 @@ payments.createTransaction({
 ## Create a callback/deposit address
 By specifying the sending currency, a unique deposit address will be returned to you.
 ```javascript
-payments.getCallbackAddress("LTCT", function(err, result) {
+payments.getCallbackAddress("LTCT", (err, result) => {
 	if(err) throw err;
 	console.log(result);
 });
