@@ -10,7 +10,7 @@ module.exports = coinPayments;
  * @param {Function} callback Callback (err, result)
  */
 function coinPayments(options, callback) {
-    if(!options.public_key ) return callback('Please provide a public key.');
+    if(!options.public_key) return callback('Please provide a public key.');
     if(!options.private_key) return callback('Please provide a private key.');
 
     this.data = {
