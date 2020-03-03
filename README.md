@@ -44,12 +44,13 @@ const payments = new coinPayments(payment_settings, function(err, result) {
 });
 ```
 
-**Create a transaction**
+## Create a transaction
 The syntax of creating a transaction.
-Please note, that the amount is defined in currency_recieve (currency1). Remember to specify both the real currency of the transaction, and the currency that will be required to be used. 
+Please note, that the amount is defined in currency_receive (currency1). Remember to specify both the real currency of the transaction, and the currency that will be required to be used. 
 Use the LiteCoin Tesnet (LTCT) for sandbox testing. 
 I suggest doing this by running [Electrum LTC](https://electrum-ltc.org/) with:
 > electrum --testnet
+
 ```javascript
 payments.createTransaction({
 	amount: 12 // DEFINED IN CURRENCY_RECEIVE
@@ -62,8 +63,8 @@ payments.createTransaction({
 });
 ```
 
-**Create a callback/deposit address**
-> How to create a transaction:
+## Create a callback/deposit address
+By specifying the sending currency, a unique deposit address will be returned to you.
 ```javascript
 payments.getCallbackAddress("LTCT", function(err, result) {
 	if(err) throw err;
