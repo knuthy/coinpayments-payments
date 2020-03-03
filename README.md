@@ -23,8 +23,11 @@
 npm install coinpayments-payments
 ```
 
+## Requirements
+This package builds upon the fact that a correct pair of private and public keys are provided. You can generate these [Here](https://www.coinpayments.net/acct-api-keys)
+
 ## Usage
-> How to initialize module:
+How to initialize the module with the correct data.
 
 ```javascript
 const coinPayments = require('coinpayments-payments');
@@ -42,7 +45,11 @@ const payments = new coinPayments(payment_settings, function(err, result) {
 ```
 
 **Create a transaction**
-> How to create a transaction:
+The syntax of creating a transaction.
+Please note, that the amount is defined in currency_recieve (currency1). Remember to specify both the real currency of the transaction, and the currency that will be required to be used. 
+Use the LiteCoin Tesnet (LTCT) for sandbox testing. 
+I suggest doing this by running [Electrum LTC](https://electrum-ltc.org/) with:
+> electrum --testnet
 ```javascript
 payments.createTransaction({
 	amount: 12 // DEFINED IN CURRENCY_RECEIVE
