@@ -24,6 +24,7 @@ npm install coinpayments-payments
 ```
 
 ## Usage
+> How to initialize module:
 
 ```javascript
 const coinPayments = require('coinpayments-payments');
@@ -34,6 +35,30 @@ const payment_settings = {
 };
 
 const payments = new coinPayments(payment_settings, function(err, result) {
+	if(err) throw err;
+	console.log(result); 
+	// Configured successfully
+});
+```
+
+**Create a transaction**
+> How to create a transaction:
+```javascript
+payments.createTransaction({
+	amount: 12 // DEFINED IN CURRENCY_RECEIVE
+	, currency_receive: "USD"
+	, currency_send: "LTCT"
+	, buyer_email: ""
+}, function(err, result) {
+	if(err) throw err;
+	console.log(result);
+});
+```
+
+**Create a callback/deposit address**
+> How to create a transaction:
+```javascript
+payments.getCallbackAddress("LTCT", function(err, result) {
 	if(err) throw err;
 	console.log(result);
 });
