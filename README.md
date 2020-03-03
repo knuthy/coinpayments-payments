@@ -33,8 +33,8 @@ How to initialize the module with the correct data.
 const coinPayments = require('coinpayments-payments');
 
 const payment_settings = {
-	private_key: ""
-	, public_key: ""
+	private_key: "", 
+	public_key: ""
 };
 
 const payments = new coinPayments(payment_settings, (err, result) => {
